@@ -1,0 +1,19 @@
+import time  
+h = 4  
+m = 4  
+s = 0
+while(True):
+    time.sleep(1)
+    s = s + 1
+    if(s == 60):
+        s = 0
+        m = m + 1  
+        if(m == 60):
+            m = 0
+            h = h + 1
+    if(h == 12):  # Changed to if instead of elif
+        s = 0
+        m = 0
+        h = 0
+print("{} : {} :{}".format(h, m, s))
+    # You might want to add a way to break out of this infinite loop
