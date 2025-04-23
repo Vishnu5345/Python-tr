@@ -1,0 +1,6 @@
+#printing time zone
+from datetime import datetime
+import pytz
+a=pytz.timezone('Asia/Calcutta')
+b=datetime.now(a)
+print(b)
