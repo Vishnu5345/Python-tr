@@ -38,3 +38,20 @@ def raju(a):
     raju(a-1)
 raju(5)
 
+
+
+
+
+
+def flower(a):
+    if(a==4):
+        return
+    print(a+10,end=" ")
+    flower(a+1)
+    print(a,end=" ")
+flower(1)
+
+
+
+
+
