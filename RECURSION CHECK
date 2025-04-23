@@ -24,3 +24,17 @@ def main():
         print()
         abc(int(a))
 main()
+
+
+
+
+
+
+def raju(a):
+    if(a==1):
+        return 
+    raju(a-1)
+    print("Hai")
+    raju(a-1)
+raju(5)
+
