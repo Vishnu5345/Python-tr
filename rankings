@@ -1,0 +1,18 @@
+#two identical persons
+#rankings
+def percentage(person):
+    total=sum(person["Marks"])
+    return total/4
+a=[
+    {"Name":"Raju","Age":23,"Marks":[45,50,50,60]},
+    {"Name":"Rose","Age":12,"Marks":[75,85,80,90]},
+    {"Name":"Ravi","Age":53,"Marks":[65,70,60,80]},
+    {"Name":"Jack","Age":22,"Marks":[55,75,65,70]}
+]
+b=sorted(a,key=percentage,reverse=True)
+#print(b)
+l=["First","Second","Third","Fourth"]
+pos=0
+for i in b:
+    print("{} has scored {} % ----> stands {}".format(i["Name"],percentage(i),l[pos]))
+    pos=pos+1
