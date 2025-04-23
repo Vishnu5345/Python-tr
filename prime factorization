@@ -1,0 +1,21 @@
+#Prime factorization  1st Method
+def prime(n):
+    if (n<2):
+        return []
+    for i in range(2,n+1):
+        if n%i==0:
+            return [i]+prime(n//i)
+n=int(input("Enter a number:"))
+print(prime(n))
+
+#2nd method
+def prime(n,a):
+    if (n==1):
+        return 1
+    i=2
+    while(n%i!=0):
+        i=i+1
+    print(i,end=" \n")
+    prime(n//i,a)
+n=int(input("Enter any number:"))
+prime(n,2)
