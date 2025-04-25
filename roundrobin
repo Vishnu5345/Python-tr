@@ -1,0 +1,19 @@
+from collections import deque
+
+def Find(tasks, time_slice):
+    Q = deque()
+    for i in range(len(tasks)):
+        Q.append((tasks[i], i + 1))  
+    time = 0  
+    while Q:
+        task_duration, task_num = Q.popleft()
+        executed_time = min(task_duration, time_slice)
+        time += executed_time
+        print(f"Task{task_num}->executed:{executed_time}units:Time Taken :{time}")
+        remaining_time = task_duration - executed_time
+        if remaining_time > 0:
+            Q.append((remaining_time, task_num))
+
+tasks = [10, 5, 8]
+time_slice = 4
+Find(tasks, time_slice)
