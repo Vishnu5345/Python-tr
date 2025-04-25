@@ -1,0 +1,43 @@
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
+def calculate_date_difference(start_date):
+
+    try:
+        end_date = date.today()
+        difference = relativedelta(end_date, start_date)
+
+        years = difference.years
+        months = difference.months
+        days = difference.days
+        total_days = (end_date - start_date).days
+
+        return years, months, days, total_days
+
+    except TypeError as e:
+        print(f"Error: Invalid date type. Please provide a datetime.date object. {e}")
+        return None, None, None, None
+    except ValueError as e:
+        print(f"Error: Invalid date value. Please check the date values. {e}")
+        return None, None, None, None
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        return None, None, None, None
+
+def print_date_difference(years, months, days, total_days):
+
+    if years is not None and months is not None and days is not None and total_days is not None: # Check if the values are not None
+        print("Date Difference:")
+        print(f"Years: {years}")
+        print(f"Months: {months}")
+        print(f"Days: {days}")
+        print(f"Total Days: {total_days}")
+    else:
+        print("Could not calculate date difference.  Check input date.")
+
+if __name__ == "__main__":
+    start_date = date(2004, 7, 14)
+
+    years, months, days, total_days = calculate_date_difference(start_date)
+
+    print_date_difference(years, months, days, total_days)
