@@ -1,0 +1,11 @@
+students={4:{"Name":"Abhi","Dept":"CSM","GENDER":"M","Cgpa:":8.2},
+          5:{"Name":"Ram","Dept":"IT","GENDER":"F","Cgpa:":8.12},
+          6:{"Name":"si","Dept":"Cyber","GENDER":"F","Cgpa:":9.2},
+          7:{"Name":"Abhiram","Dept":"CSM","GENDER":"M","Cgpa:":7.8},
+          8:{"Name":"Harsha","Dept":"Mech","GENDER":"M","Cgpa:":3.2},
+         }
+print("-"*38)
+print("{:<5}{:<12}{:<7}{:<7}{:<7}".format("ID","NAME","DEPT","GENDER","CGPA"))
+print('-'*38)
+for id,info in students.items():
+    print("{:<5}{:<12}{:<7}{:<7}{:<7}".format((id),info["Name"],info["Dept"],info["GENDER"],info["Cgpa:"]))
